@@ -1,7 +1,7 @@
 Attribute VB_Name = "Module1"
     Option Explicit
  
-Sub createExcelFileTest()
+Sub Q1()
     Dim newBookName As String
     Dim newBookPath As String
     Dim newBook As Workbook
@@ -27,7 +27,7 @@ Sub createExcelFileTest()
     End If
 End Sub 
 
-Sub Enter_text_in_other_excel_file()
+Sub Q2()
 
 '----------ダイアログボックスで指定のエクセルファイルを開く----------
 
@@ -50,18 +50,49 @@ FileName = Dir(FilePath)
 
 '前の処理で抽出したファイルのシートとセルを指定して値を入力する
 Dim aaa As String
-Workbooks(FileName).Worksheets("Sheet1").Range("A1").Value = "会社名"
-Workbooks(FileName).Worksheets("Sheet1").Range("A3").Value = "注文商品"
-Workbooks(FileName).Worksheets("Sheet1").Range("A4").Value = "メガスパンネジ"
-Workbooks(FileName).Worksheets("Sheet1").Range("A5").Value = "ハイパーロックボルト"
-Workbooks(FileName).Worksheets("Sheet1").Range("B1").Value = "エレクトロニクス"
-Workbooks(FileName).Worksheets("Sheet1").Range("B3").Value = "金額"
-Workbooks(FileName).Worksheets("Sheet1").Range("B4").Value = "9300"
-Workbooks(FileName).Worksheets("Sheet1").Range("B5").Value = "1700"
-Workbooks(FileName).Worksheets("Sheet1").Range("C3").Value = "数量"
-Workbooks(FileName).Worksheets("Sheet1").Range("C4").Value = "2"
-Workbooks(FileName).Worksheets("Sheet1").Range("C5").Value = "1"
-Workbooks(FileName).Worksheets("Sheet1").Range("C5").Value = "1"
+Sheets("sheet1").Select
+Sheets("sheet1").Name = "エレクトロニクス"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("A1").Value = "会社名"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("A3").Value = "注文商品"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("A4").Value = "メガスパンネジ"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("A5").Value = "ハイパーロックボルト"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("B1").Value = "エレクトロニクス"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("B3").Value = "金額"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("B4").Value = "9300"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("B5").Value = "1700"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("C3").Value = "数量"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("C4").Value = "2"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("C5").Value = "1"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("D3").Value = "合計"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("D4").Value = "=SUM(B4*C4)"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("D5").Value = "=SUM(B5*C5)"
+Workbooks(FileName).Worksheets("エレクトロニクス").Range("D6").Value = "=SUM(D4+D5)"
+'シート2'
+ With Sheets.Add(After:=Sheets(Sheets.Count))
+Worksheets(2).Name = "プライムエンジニアリング"
+End With
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A1").Value = "会社名"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A3").Value = "注文商品"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A4").Value = "フレキシブルシャフトレンチ"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A5").Value = "メガパワーグラインダー"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A6").Value = "エクストラロングリーチレンチ"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B1").Value = "プライムエンジニアリング"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B3").Value = "金額"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B4").Value = "480"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B5").Value = "6100"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B6").Value = "8000"
+Workbooks(FileName).Worksheets("プライムエンジニアリン").Range("C3").Value = "数量"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("C4").Value = "10"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("C5").Value = "1"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("C6").Value = "3"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D3").Value = "合計"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D4").Value = "=SUM(B4*C4)"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D5").Value = "=SUM(B5*C5)"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D6").Value = "=SUM(B6*C6)"
+Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D7").Value = "=SUM(D4+D5+D6)"
+
+
+
 
 
 

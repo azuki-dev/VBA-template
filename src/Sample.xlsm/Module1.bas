@@ -1,8 +1,8 @@
 Attribute VB_Name = "Module1"
-Sub –â1()
+Sub ï¿½ï¿½1()
     Range("A1") = "Hello World!"
 End Sub
-Sub –â2()
+Sub ï¿½ï¿½2()
     Range("A1") = 1
     Range("A2") = 2
     Range("A3") = 3
@@ -14,18 +14,18 @@ Sub –â2()
     Range("A9") = 9
     Range("A10") = 10
 End Sub
-Sub –â3()
+Sub ï¿½ï¿½3()
     Range("B1").Value = "=SUM(A1:A10)"
 End Sub
-Sub –â4()
+Sub ï¿½ï¿½4()
     Range("B2").Value = "=AVERAGE(A1:A10)"
 End Sub
-Sub –â5()
+Sub ï¿½ï¿½5()
   Range("A1:A11").Sort _
         Key1:=Range("A1"), Order1:=xlAscending, _
         Header:=xlNo
 End Sub
-Sub –â6()
+Sub ï¿½ï¿½6()
     Dim i As Integer
     Dim j As Integer
     
@@ -39,14 +39,14 @@ Sub –â6()
     Next i
     
 End Sub
-Sub –â7()
+Sub ï¿½ï¿½7()
     Dim Names(1 To 5) As String
     
-    Worksheets("Sheet1").Range("A1") = "•Û“o"
-    Worksheets("Sheet1").Range("A2") = "•—"
-    Worksheets("Sheet1").Range("A3") = "“VXÀ"
-    Worksheets("Sheet1").Range("A4") = "ØŠÔ"
-    Worksheets("Sheet1").Range("A5") = "‰F¡"
+    Worksheets("Sheet1").Range("A1") = "ï¿½Û“o"
+    Worksheets("Sheet1").Range("A2") = "ï¿½ï¿½ï¿½ï¿½"
+    Worksheets("Sheet1").Range("A3") = "ï¿½Vï¿½Xï¿½ï¿½"
+    Worksheets("Sheet1").Range("A4") = "ï¿½ØŠï¿½"
+    Worksheets("Sheet1").Range("A5") = "ï¿½Fï¿½ï¿½"
     
     Names(1) = Sheets("Sheet1").Range("A1").Value
     Names(2) = Sheets("Sheet1").Range("A2").Value
@@ -58,10 +58,10 @@ Sub –â7()
     Dim Temp As String
     
     For i = 1 To 5
-        RandNum = Int((5 - i + 1) * Rnd + i) ' ƒ‰ƒ“ƒ_ƒ€‚È”‚ğæ“¾
-        Temp = Names(i) ' –¼‘O‚ğˆê“I‚É•Û‘¶
-        Names(i) = Names(RandNum) ' –¼‘O‚ğ“ü‚ê‘Ö‚¦‚é
-        Names(RandNum) = Temp ' ˆê“I‚É•Û‘¶‚µ‚½–¼‘O‚ğ‘ã“ü
+        RandNum = Int((5 - i + 1) * Rnd + i) ' ï¿½ï¿½ï¿½ï¿½ï¿½_ï¿½ï¿½ï¿½Èï¿½ï¿½ï¿½ï¿½æ“¾
+        Temp = Names(i) ' ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½êï¿½Iï¿½É•Û‘ï¿½
+        Names(i) = Names(RandNum) ' ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½ï¿½Ö‚ï¿½ï¿½ï¿½
+        Names(RandNum) = Temp ' ï¿½êï¿½Iï¿½É•Û‘ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Oï¿½ï¿½ï¿½ï¿½
     Next i
 
     Sheets("Sheet2").Range("A1").Value = Names(1)
@@ -70,7 +70,7 @@ Sub –â7()
     Sheets("Sheet2").Range("A4").Value = Names(4)
     Sheets("Sheet2").Range("A5").Value = Names(5)
 End Sub
-Sub –â8()
+Sub ï¿½ï¿½8()
     Range("A1") = 4513531
     Range("A2") = 4541554
     Range("A3") = 4524513
@@ -85,12 +85,12 @@ Sub –â8()
     Range("B1").Value = "=MAX(A1:A10)"
     Range("B2").Value = "=MIN(A1:A10)"
 End Sub
-Sub –â9()
+Sub ï¿½ï¿½9()
     Range("A1") = "1/1"
     Range("A2") = "4/23"
     Range("A3").Value = "=DAYS(A2,A1)"
 End Sub
-Sub –â10()
+Sub ï¿½ï¿½10()
     Dim i As Integer
     Range("A1") = 1
     Range("A2") = 2
@@ -105,12 +105,12 @@ Sub –â10()
     
     
     For i = 1 To 10
-        ' ƒV[ƒg1‚ÌA—ñ‚©‚ç”’l‚ğæ“¾‚µ‚Ä10”{‚·‚é
+        ' ï¿½Vï¿½[ï¿½g1ï¿½ï¿½Aï¿½ñ‚©‚ç”ï¿½lï¿½ï¿½ï¿½æ“¾ï¿½ï¿½ï¿½ï¿½10ï¿½{ï¿½ï¿½ï¿½ï¿½
         Sheets("Sheet1").Activate
         Dim val As Double
         val = Range("A" & i).Value * 10
         
-        ' ƒV[ƒg2‚ÌA—ñ‚ÉŒ‹‰Ê‚ğ•\¦‚·‚é
+        ' ï¿½Vï¿½[ï¿½g2ï¿½ï¿½Aï¿½ï¿½ÉŒï¿½ï¿½Ê‚ï¿½\ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         Sheets("Sheet2").Activate
         Range("A" & i).Value = val
     Next i
