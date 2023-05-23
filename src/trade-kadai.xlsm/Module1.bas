@@ -44,7 +44,7 @@ Workbooks.Open FilePath
 
 'FilePathに代入されているフルパスから、ファイル名を抽出する
 'Dir関数は引数に指定したファイルが存在したとき、そのファイル名を返す関数
-FileName = Dir(FilePath)
+"output.xlsx" = Dir(FilePath)
 
 '----------値を入力する----------
 
@@ -52,51 +52,51 @@ FileName = Dir(FilePath)
 Dim aaa As String
 Sheets("sheet1").Select
 Sheets("sheet1").Name = "エレクトロニクス"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("A1").Value = "会社名"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("A3").Value = "注文商品"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("A4").Value = "メガスパンネジ"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("A5").Value = "ハイパーロックボルト"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("B1").Value = "エレクトロニクス"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("B3").Value = "金額"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("B4").Value = "9300"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("B5").Value = "1700"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("C3").Value = "数量"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("C4").Value = "2"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("C5").Value = "1"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("D3").Value = "合計"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("D4").Value = "=SUM(B4*C4)"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("D5").Value = "=SUM(B5*C5)"
-Workbooks(FileName).Worksheets("エレクトロニクス").Range("D6").Value = "=SUM(D4+D5)"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A1").Value = "会社名"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A3").Value = "注文商品"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A4").Value = "メガスパンネジ"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A5").Value = "ハイパーロックボルト"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B1").Value = "エレクトロニクス"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B3").Value = "金額"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B4").Value = "9300"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B5").Value = "1700"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("C3").Value = "数量"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("C4").Value = "2"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("C5").Value = "1"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D3").Value = "合計"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D4").Value = "=SUM(B4*C4)"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D5").Value = "=SUM(B5*C5)"
+Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D6").Value = "=SUM(D4+D5)"
 'シート2'
  With Sheets.Add(After:=Sheets(Sheets.Count))
     .Name = "プライムエンジニアリング"
 End With
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A1").Value = "会社名"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A3").Value = "注文商品"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A4").Value = "フレキシブルシャフトレンチ"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A5").Value = "メガパワーグラインダー"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A6").Value = "エクストラロングリーチレンチ"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B1").Value = "プライムエンジニアリング"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B3").Value = "金額"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B4").Value = "480"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B5").Value = "6100"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("B6").Value = "8000"
-Workbooks(FileName).Worksheets("プライムエンジニアリン").Range("C3").Value = "数量"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("C4").Value = "10"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("C5").Value = "1"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("C6").Value = "3"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D3").Value = "合計"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D4").Value = "=SUM(B4*C4)"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D5").Value = "=SUM(B5*C5)"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D6").Value = "=SUM(B6*C6)"
-Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D7").Value = "=SUM(D4+D5+D6)"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A1").Value = "会社名"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A3").Value = "注文商品"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A4").Value = "フレキシブルシャフトレンチ"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A5").Value = "メガパワーグラインダー"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A6").Value = "エクストラロングリーチレンチ"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B1").Value = "プライムエンジニアリング"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B3").Value = "金額"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B4").Value = "480"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B5").Value = "6100"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B6").Value = "8000"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C3").Value = "数量"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C4").Value = "10"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C5").Value = "1"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C6").Value = "3"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D3").Value = "合計"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D4").Value = "=SUM(B4*C4)"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D5").Value = "=SUM(B5*C5)"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D6").Value = "=SUM(B6*C6)"
+Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D7").Value = "=SUM(D4+D5+D6)"
 
 
 
  Range("A3").EntireColumn.AutoFit 
 
 
-Workbooks(FileName).Save
-Workbooks(FileName).Close
+Workbooks("output.xlsx").Save
+Workbooks("output.xlsx").Close
 
 End Sub
