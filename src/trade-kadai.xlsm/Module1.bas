@@ -69,7 +69,7 @@ Workbooks(FileName).Worksheets("エレクトロニクス").Range("D5").Value = "
 Workbooks(FileName).Worksheets("エレクトロニクス").Range("D6").Value = "=SUM(D4+D5)"
 'シート2'
  With Sheets.Add(After:=Sheets(Sheets.Count))
-Worksheets(2).Name = "プライムエンジニアリング"
+    .Name = "プライムエンジニアリング"
 End With
 Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A1").Value = "会社名"
 Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("A3").Value = "注文商品"
@@ -93,16 +93,8 @@ Workbooks(FileName).Worksheets("プライムエンジニアリング").Range("D7
 
 
 
+ Range("A3").EntireColumn.AutoFit 
 
-
-
-
-
-
-
-'----------列を自動調節-----------
- Range("A3").EntireColumn.AutoFit    '---(2)A列の一番長いセルのセル幅に自動調整
-'----------上書き保存して閉じる----------
 
 Workbooks(FileName).Save
 Workbooks(FileName).Close
