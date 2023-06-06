@@ -46,7 +46,52 @@ Workbooks.Open FilePath
 'Dir関数は引数に指定したファイルが存在したとき、そのファイル名を返す関数
 "output.xlsx" = Dir(FilePath)
 
-'----------値を入力する----------
+'----------シートを検索する----------
+    Dim dicResult As Object
+    Dim findStr As String
+    Dim ws As Worksheet
+    Dim resultRange As Range
+    Dim address As String
+    Dim arrAddress As Variant
+    Dim resultRangeStr As String
+    Dim key As Variant
+    
+    Set dicResult = CreateObject("Scripting.Dictionary")
+    
+    '検索対象の文字列を指定
+    findStr = "エレクトロニクス"
+    '検索対象のシートを指定
+    Set ws = Worksheets("取引先マスタ")
+    
+    '検索を実行(1回目)
+    Set resultRange = ws.Cells.Find(What:=findStr, LookIn:=xlValues, LookAt:=xlPart)
+    
+    '検索を実行(最後まで繰り返し)
+    Do While Not (resultRange Is Nothing)
+        '見つかったセルのアドレスを取得(例:C$3など)
+        address = resultRange.address(RowAbsolute:=True, ColumnAbsolute:=False)
+        '見つかったセルを取得(例:C3など)
+        resultRangeStr = Split(address, "$")(0) & resultRange.Row
+        '見つかったセルが既にDictionaryに設定済みの場合はLoopを抜ける
+        If dicResult.Exists(resultRangeStr) Then
+            Exit Do
+        End If
+        '見つかったセルの情報をDictionaryへ設定
+        dicResult.Add resultRangeStr, resultRange.Value
+        '次を検索
+        Set resultRange = ws.Cells.FindNext(After:=resultRange)
+    Loop
+    
+    '検索結果(=Dictionaryの内容)をイミディエイトウィンドウへ出力
+    If dicResult.Count <> 0 Then
+        For Each key In dicResult.Keys
+            
+        Next
+    Else
+        MsgBox "指定した文字列は存在しませんでした。"
+    End If
+
+
 
 '前の処理で抽出したファイルのシートとセルを指定して値を入力する
 Dim aaa As String
@@ -54,42 +99,19 @@ Sheets("sheet1").Select
 Sheets("sheet1").Name = "エレクトロニクス"
 Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A1").Value = "会社名"
 Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A3").Value = "注文商品"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A4").Value = "メガスパンネジ"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("A5").Value = "ハイパーロックボルト"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B1").Value = "エレクトロニクス"
 Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B3").Value = "金額"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B4").Value = "9300"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("B5").Value = "1700"
 Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("C3").Value = "数量"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("C4").Value = "2"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("C5").Value = "1"
 Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D3").Value = "合計"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D4").Value = "=SUM(B4*C4)"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D5").Value = "=SUM(B5*C5)"
-Workbooks("output.xlsx").Worksheets("エレクトロニクス").Range("D6").Value = "=SUM(D4+D5)"
+
 'シート2'
  With Sheets.Add(After:=Sheets(Sheets.Count))
     .Name = "プライムエンジニアリング"
 End With
 Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A1").Value = "会社名"
 Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A3").Value = "注文商品"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A4").Value = "フレキシブルシャフトレンチ"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A5").Value = "メガパワーグラインダー"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("A6").Value = "エクストラロングリーチレンチ"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B1").Value = "プライムエンジニアリング"
 Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B3").Value = "金額"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B4").Value = "480"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B5").Value = "6100"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("B6").Value = "8000"
 Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C3").Value = "数量"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C4").Value = "10"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C5").Value = "1"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("C6").Value = "3"
 Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D3").Value = "合計"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D4").Value = "=SUM(B4*C4)"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D5").Value = "=SUM(B5*C5)"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D6").Value = "=SUM(B6*C6)"
-Workbooks("output.xlsx").Worksheets("プライムエンジニアリング").Range("D7").Value = "=SUM(D4+D5+D6)"
 
 
 
