@@ -17,3 +17,20 @@ powershell.exe -ExecutionPolicy Bypass -File .\reload.ps1 <ファイル名>
 例)
 powershell.exe -ExecutionPolicy Bypass -File .\reload.ps1 Sample.xlsm
 ```
+powershell.exe -ExecutionPolicy Bypass -File .\reload.ps1　trade-kadai.xlsm
+```
+
+[
+    [29,78,972],
+        [29,78,972],
+    [29,78,972],
+
+]
+[
+    [ "インダストリアルテクノロジーソリューションズ","ターボグラインダーアタッチメント",78,1900000],
+    [ "インダストリアルテクノロジーソリューションズ","ターボグラインダーアタッチメント",78,1900000],
+    [ "インダストリアルテクノロジーソリューションズ","ターボグラインダーアタッチメント",78,1900000]
+]
+
+
+```
